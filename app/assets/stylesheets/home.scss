@@ -1,0 +1,27 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.main-image {
+    width: 100%;
+    background-repeat:  no-repeat; 
+    height:700px; 
+}
+.media-content {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 60px;
+}
+.column  {
+    text-align: center;
+    margin-top: 30px;
+}
+.column-item  {
+    margin-top: 30px;
+    
+}
+.btn {
+    width: 150px;
+}
+.actions {
+    margin-top:30px;
+}

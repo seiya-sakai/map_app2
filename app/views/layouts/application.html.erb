@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MapApp2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/flashes' %>
+    <nav class="navbar navbar-dark bg-dark">
+      <form class="container-fluid justify-content-start">
+        <a class="btn btn-primary" href="/map/index" role="button">らーめんマップへ</a>
+        <% if user_signed_in? %>
+            <a class="btn btn-primary" href="/users/edit" role="button">プロフィール変更</a>
+            <a class="btn btn-primary" href="/users" role="button" data-method="delete">ログアウト</a>
+        <% else %>
+            <a class="btn btn-primary" href="/users/sign_up" role="button">サインイン</a>
+            <a class="btn btn-primary" href="/users/sign_in" role="button">ログイン</a>
+         <% end %>
+      </form>
+    </nav>
+   
+   
+    <%= yield %>
+  </body>
+</html>

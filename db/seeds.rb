@@ -1,0 +1,13 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)
+Shop.create(name: 'らぁ麺 紫陽花', adress: '愛知県名古屋市中川区八剱町4-20-1 コーポ源 1F',shop_image: "image3.png", phone_number: '052-355-0787', url: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi4oPPqpMjvAhWFBIgKHex6Db0QFjAAegQIAhAD&url=https%3A%2F%2Ftabelog.com%2Faichi%2FA2301%2FA230112%2F23055953%2F&usg=AOvVaw37EIX4tfUM1zBFoyc6b3L7')
+Shop.create(name: 'ラーメン専門店 徳川町 如水', adress: '愛知県名古屋市東区徳川町201',shop_image: "image4.png", phone_number: '052-937-9228', url: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjst6PfpcjvAhXHfXAKHca5BggQFjAAegQIAhAD&url=https%3A%2F%2Ftabelog.com%2Faichi%2FA2301%2FA230110%2F23000971%2F&usg=AOvVaw3Gp6AGoBoRGjoq-VaU4aMf')
+Shop.create(name: '麺家獅子丸', adress: '愛知県名古屋市中村区亀島2-1-1',shop_image: "image5.png", phone_number: '052-453-0440', url: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi8l-3ZpsjvAhUVHXAKHVLSB_YQFjAAegQIARAD&url=https%3A%2F%2Ftabelog.com%2Faichi%2FA2301%2FA230101%2F23060674%2F&usg=AOvVaw3v5MCJCVMhfJFN6bjLCK_V')
+Shop.create(name: 'らぁ麺や 汐そば雫', adress: '愛知県名古屋市瑞穂区下坂町4-15 スターリア1F',shop_image: "image6.png", phone_number: '不明', url: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjO57_mpsjvAhWp3mEKHStfA64QFjAAegQIARAD&url=https%3A%2F%2Ftabelog.com%2Faichi%2FA2301%2FA230112%2F23050560%2F&usg=AOvVaw2kSWW0sPJyz5GAXGJxy0Yi')
+Shop.create(name: 'らぁ麺 飛鶏 ', adress: '愛知県春日井市御幸町3-4-6',shop_image: "image7.png", phone_number: '不明', url: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwip8-z3psjvAhXK62EKHcu8BZgQFjAAegQIAhAD&url=https%3A%2F%2Ftabelog.com%2Faichi%2FA2303%2FA230301%2F23051026%2F&usg=AOvVaw0xyPoKxzivt_o7GEA6XFtU')
+Shop.create(name: 'からみそラーメン ふくろう 本店', adress: '愛知県名古屋市北区辻町2-32',shop_image: "image8.png", phone_number: '052-325-5454', url: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwj8sr2Up8jvAhVH-2EKHfJtD-IQFjAAegQIAhAD&url=https%3A%2F%2Ftabelog.com%2Faichi%2FA2301%2FA230110%2F23050032%2F&usg=AOvVaw1ZxUFqP2KCApo-dPccxOWa')

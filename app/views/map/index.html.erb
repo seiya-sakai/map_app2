@@ -1,0 +1,93 @@
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_PSBxnfWMZrgsTtn5mY9csi4Qw24o5ic&callback=initMap"></script> 
+<script> 
+var map;
+var marker = [];
+var infoWindow = [];
+var markerData = [ // マーカーを立てる場所名・緯度・経度
+  {
+       name: 'らぁ麺　紫陽花',
+       lat: 35.126811,
+        lng: 136.87956,
+        url: "/map/1"
+ }, {
+        name: 'ラーメン専門店　徳川町　如水',
+        lat: 35.183039,
+        lng: 136.928396,
+        url: "/map/2"
+ }, {
+        name: '麺家獅子丸',
+     lat: 35.175265,
+      lng: 136.879054,
+      url: "/map/3"
+ }, {
+        name: 'らぁ麺や 汐そば雫',
+        lat: 35.122784,
+        lng: 136.925668,
+        url: "/map/4"
+       
+ }, {
+        name: 'らぁ麺 飛鶏',
+        lat: 35.221588,
+        lng: 136.94369 ,
+        url: "/map/5"
+     
+ }, {
+        name: 'からみそラーメン ふくろう 本店',
+        lat: 35.206393,
+        lng: 136.923628 ,
+         url: "/map/6"
+     
+ }
+];
+ 
+function initMap() {
+ // 地図の作成
+    var mapLatLng = new google.maps.LatLng({lat: markerData[0]['lat'], lng: markerData[0]['lng']}); // 緯度経度のデータ作成
+   map = new google.maps.Map(document.getElementById('sample'), { // #sampleに地図を埋め込む
+     center: mapLatLng, // 地図の中心を指定
+      zoom: 12// 地図のズームを指定
+   });
+ 
+ // マーカー毎の処理
+ for (var i = 0; i < markerData.length; i++) {
+        markerLatLng = new google.maps.LatLng({lat: markerData[i]['lat'], lng: markerData[i]['lng']}); // 緯度経度のデータ作成
+        marker[i] = new google.maps.Marker({ // マーカーの追加
+         position: markerLatLng, // マーカーを立てる位置を指定
+            map: map ,// マーカーを立てる地図を指定
+            
+         });
+
+ 
+     infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
+         content:   `<a href="${markerData[i].url}" target="_blank" style="display:inline-block;">${markerData[i].name}</a>`
+                 
+
+           // 吹き出しに表示する内容
+       });
+ 
+     markerEvent(i); // マーカーにクリックイベントを追加
+ }
+ 
+  
+}
+ 
+// マーカーにクリックイベントを追加
+function markerEvent(i) {
+    marker[i].addListener('click', function() { // マーカーをクリックしたとき
+      infoWindow[i].open(map, marker[i]); // 吹き出しの表示
+  });
+}
+
+</script> 
+<div class='map-container'>
+  <div id="sample"></div>
+  <div class="overflow-auto" style="width:400px; height:800px;">
+    <% @shop.each do |shop| %>
+      <div class='scroll'>
+        <%= image_tag "/#{shop.shop_image}" %>
+        <%=simple_format shop.name %>
+        <a href="<%=shop.url %>">食べログ店舗画面</a>
+      </div>
+    <% end %>
+  </div>
+</div>
