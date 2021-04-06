@@ -1,0 +1,54 @@
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+   
+    
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    .container img {
+        width: 100%;
+    }
+    .flexitem {
+        font-size: 30px;
+        
+        
+    }
+    .home-index-item{
+        width: 100%;
+    }
+    
+    .card-body {
+        font-size: 10px;
+    } 
+}
+@media screen and (max-width: 479px) {
+   .container img {
+       width: 100%;
+   }
+   .flexitem {
+       font-size: 10px;
+       display: flex;
+       
+   }
+   
+   .home-index-item{
+       width: 100%;
+       
+       
+   }
+   .card {
+       text-align: left;
+   }
+   .card-body {
+       font-size: 10px;
+   } 
+   .scroll {
+       font-size: 10px;
+   }
+   .scroll img {
+       width: 100%;
+       height: 70px;
+   }
+   .scroll p {
+       font-size: 12px;
+   }
+
+}

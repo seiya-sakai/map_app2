@@ -4,6 +4,7 @@
     <title>MapApp2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -11,20 +12,24 @@
 
   <body>
     <%= render 'layouts/flashes' %>
-    <nav class="navbar navbar-dark bg-dark">
-      <form class="container-fluid justify-content-start">
-        <a class="btn btn-primary" href="/map/index" role="button">らーめんマップへ</a>
-        <% if user_signed_in? %>
-            <a class="btn btn-primary" href="/users/edit" role="button">プロフィール変更</a>
-            <a class="btn btn-primary" href="/users" role="button" data-method="delete">ログアウト</a>
-        <% else %>
-            <a class="btn btn-primary" href="/users/sign_up" role="button">サインイン</a>
-            <a class="btn btn-primary" href="/users/sign_in" role="button">ログイン</a>
-         <% end %>
-      </form>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="/map/index">らーめんマップへ <span class="sr-only"></span></a>
+          <% if user_signed_in? %>
+            <a class="nav-item nav-link" href="/users/edit">プロフィール変更</a>
+            <a class="nav-item nav-link" data-method="delete"　href="/users">ログアウト</a>
+          <% else %>
+            <a class="nav-item nav-link " href="/users/sign_up">サインイン</a>
+            <a class="nav-item nav-link " href="/users/sign_in">ログイン</a>
+          <% end %>
+        </div>
+      </div>
     </nav>
-   
-   
+
     <%= yield %>
   </body>
 </html>

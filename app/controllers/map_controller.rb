@@ -8,7 +8,9 @@ class MapController < ApplicationController
     @post = Post.new
   end  
   def create
-    Post.create(post_params)
+    Post.new(post_params)
+    @post.user_id = current_user.id
+    @post.save
     @posts = Post.all
     respond_to do |format|
       format.js
