@@ -8,7 +8,7 @@ class MapController < ApplicationController
     @post = Post.new
   end  
   def create
-    Post.new(post_params)
+    @post= Post.new(post_params)
     @post.user_id = current_user.id
     @post.save
     @posts = Post.all
@@ -18,7 +18,7 @@ class MapController < ApplicationController
   end  
   private 
   def post_params
-    params.require(:post).permit(:title,:body)
+    params.require(:post).permit(:title,:body,:shop_id)
   end  
   
 end

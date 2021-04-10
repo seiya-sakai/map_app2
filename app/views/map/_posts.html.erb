@@ -2,11 +2,12 @@
     <% @posts.each do |post| %> 
        <div class="card " style="width: 100%;" >
          <div class="user-infomation">
-            <%=post.user.name %>
+            <%= attachment_image_tag post.user, :profile_image, fallback: "no-image.png" %>
+            <%=post.user.username %>
          </div>
          <div class="card-body ">
-            <h5 class="card-title "><%=post.title %></h5>
-            <p class="card-text "><%= simple_format post.body %></p>
+            <h5 class="card-title "><%=post.shop.title %></h5>
+            <p class="card-text "><%= simple_format post.shop.body %></p>
           </div>
        </div>
     <% end %>
