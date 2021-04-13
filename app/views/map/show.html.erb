@@ -1,7 +1,6 @@
 <div class="container" >
-   <% @shop.each do |shop| %>
       <div class="posts-index-image">
-         <%= image_tag "/#{shop.shop_image}" %>
+         <%= image_tag "/#{@shop.shop_image}" %>
       </div>
       <div class="card">
         <div class="card-body">
@@ -10,7 +9,7 @@
                   <p>店名</p>
                 </div>
                 <div class='flexitem'>
-                  <%=shop.name %>
+                  <p><%=@shop.name %></p>
                 </div>
             </div>
         </div>
@@ -22,7 +21,7 @@
                   <p>住所</p>
                 </div>
                 <div class='flexitem'>
-                  <%=shop.adress %>
+                  <p><%=@shop.adress %></p>
                 </div>
             </div>
         </div>
@@ -34,12 +33,11 @@
                   <p>電話番号</p>
                 </div>
                 <div class='flexitem'>
-                  <%=shop.phone_number %>
+                  <p><%=@shop.phone_number %></p>
                 </div>
             </div>
         </div>
-      </div>
-    <% end %>  
+      </div>  
 </div>
 <div class="modal_container">
         <!-- Button trigger modal -->

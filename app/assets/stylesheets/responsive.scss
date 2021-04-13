@@ -11,15 +11,13 @@
         
         
     }
-    .home-index-item{
-        width: 100%;
-    }
     
-    .card-body {
-        font-size: 10px;
-    } 
+   
 }
 @media screen and (max-width: 479px) {
+    .col-md-2 img{
+        width: 15%;
+    }
    .container img {
        width: 100%;
    }
@@ -29,13 +27,14 @@
        
    }
    
+   
    .home-index-item{
        width: 100%;
        
        
    }
-   .card {
-       text-align: left;
+   .row {
+       display: flex;
    }
    .card-body {
        font-size: 10px;

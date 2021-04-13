@@ -1,14 +1,24 @@
-
-    <% @posts.each do |post| %> 
-       <div class="card " style="width: 100%;" >
-         <div class="user-infomation">
-            <%= attachment_image_tag post.user, :profile_image, fallback: "no-image.png" %>
-            <%=post.user.username %>
-         </div>
-         <div class="card-body ">
-            <h5 class="card-title "><%=post.shop.title %></h5>
-            <p class="card-text "><%= simple_format post.shop.body %></p>
-          </div>
-       </div>
-    <% end %>
+<div class='content mt-5 mb-5'>
+   <% @posts.each do |post| %>
+         <% if post.shop.id == @shop.id %>
+           <div class="card" style="width: 100%;" >
+               <div class="card" style="max-width: 100%">
+                  <div class="row no-gutters">
+                     <div class="col-md-2 my-auto">
+                           <%= attachment_image_tag post.user, :profile_image, fallback: "no-image.png", class: "card-img" %>
+                     </div>
+                     <div class="col-md-8">
+                           <div class="card-body">
+                              <h2 class="card-title"><%=post.user.username %></h2>
+                              <h5 class="card-title"><%=post.title %></h5>
+                              <p><%= simple_format post.body %></p>
+                           </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         <% end %>
+   <% end %>
+</div>
+   
   

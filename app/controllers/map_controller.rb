@@ -3,18 +3,22 @@ class MapController < ApplicationController
     @shop=Shop.all
   end  
   def show
-    @shop = Shop.where(id: params[:id])
+    @shop = Shop.find(params[:id])
     @posts = Post.all
     @post = Post.new
   end  
   def create
-    @post= Post.new(post_params)
-    @post.user_id = current_user.id
-    @post.save
-    @posts = Post.all
-    respond_to do |format|
-      format.js
-    end
+    if current_user
+      @post= Post.new(post_params)
+      @post.user_id = current_user.id
+      @post.save
+      @posts = Post.all
+      respond_to do |format|
+        format.js
+      end 
+    else
+      redirect_to new_user_registration_path, notice: '投稿にはログインが必要です'
+    end  
   end  
   private 
   def post_params

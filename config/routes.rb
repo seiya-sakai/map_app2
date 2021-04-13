@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get "map/index", to: "map#index"
   get "map/:id", to: "map#show"
   post "map/create", to: "map#create"
+  resources :users
 end
