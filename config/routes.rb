@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get "map/index", to: "map#index"
   get "map/:id", to: "map#show"
   post "map/create", to: "map#create"
-  resources :users
+  resources :users, only: [:show, :edit, :update]
+  resources :posts, only: [:destroy]
 end

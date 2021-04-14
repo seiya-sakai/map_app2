@@ -34,13 +34,6 @@
                 <% end %>
               </tr>
             </table>
-            <table class="table is-fullwidth">
-              <tr>
-                <td>
-                  <%= @user.profile %>
-                </td>
-              </tr>
-            </table>
           </div>
         </div>
       </div>
@@ -48,3 +41,30 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      <% @user.posts.each do |post| %>
+        <div class="column is-3">
+          <div class="card mb-5">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <%=post.title %>
+                  <br>
+                  <%=post.body %>
+                  <% if @user.id == current_user.id %>
+                    <br>
+                    <%= link_to post_path(post), method: :delete, data: {confirm: "削除しますか？"}, class: "panel-block" do %>
+                      この投稿を削除する
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

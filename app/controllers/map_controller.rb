@@ -13,13 +13,15 @@ class MapController < ApplicationController
       @post.user_id = current_user.id
       @post.save
       @posts = Post.all
+      @shop = Shop.find(post_params[:shop_id])
       respond_to do |format|
         format.js
       end 
     else
       redirect_to new_user_registration_path, notice: '投稿にはログインが必要です'
     end  
-  end  
+  end
+   
   private 
   def post_params
     params.require(:post).permit(:title,:body,:shop_id)
