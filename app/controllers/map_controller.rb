@@ -1,6 +1,6 @@
 class MapController < ApplicationController
   def index
-    @shop=Shop.all
+    @shops=Shop.all
   end  
   def show
     @shop = Shop.find(params[:id])

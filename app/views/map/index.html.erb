@@ -1,9 +1,11 @@
+
 <script async src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY'] %>&callback=initMap"></script> 
 <script> 
+
 var map;
 var marker = [];
 var infoWindow = [];
-<% @shop.each do |shop| %>
+<% @shops.each do |shop| %>
   function initMap() {
   // 地図の作成
       var mapLatLng = new google.maps.LatLng({lat: <%=shop.lat %>, lng: <%=shop.lng %>}); // 緯度経度のデータ作成
@@ -48,10 +50,10 @@ function markerEvent(i) {
 <div class='map-container'>
   <div id="sample"></div>
   <div class="overflow-auto" style="width:30%; height:800px;">
-    <% @shop.each do |shop| %>
+    <% @shops.each do |shop| %>
       <div class='scroll'>
         <%= image_tag "/#{shop.shop_image}" %>
-        <%= link_to 'map/#{shop.id}' do %>
+        <%= link_to map_path(shop) do %>
            <%=simple_format shop.name %>
         <% end %>
         <a href="<%=shop.url %>">食べログ店舗画面</a>
