@@ -25,7 +25,7 @@ var infoWindow = [];
 
   
       infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
-          content:   '<%=link_to '#{shop.name}', '/map/#{shop.id}' %>'
+          content:   '<%=link_to '#{shop.name}', map_path(shop) %>'
                   
 
             // 吹き出しに表示する内容
