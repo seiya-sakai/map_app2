@@ -9,7 +9,8 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <title>源選！愛知県のらーめんマップ!</title>
-    <meta name="description" content="愛知県のらーめんがマップでわかる！会員登録をして、クチコミをかこう！">
+    <meta name="description" content="らーめん屋がマップでわかる！会員登録をして、クチコミをかこう！">
+    
   </head>
   <body>
     <%= render 'layouts/flashes' %>
@@ -19,7 +20,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="/map/index">らーめんマップへ <span class="sr-only"></span></a>
+          <%= link_to "らーめんマップへ",  map_index_path, class: "nav-item nav-link " %>
+          <%= link_to "新規店舗登録", new_shop_path, class: "nav-item nav-link " %>
           <% if user_signed_in? %>
             <%= link_to "マイページ", user_path(current_user), class: "nav-item nav-link " %>
             <%= link_to 'ログアウト', "/users/sign_out", method: :delete, class: "nav-item nav-link " %>

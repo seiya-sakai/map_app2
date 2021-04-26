@@ -1,0 +1,17 @@
+<%= form_for(@shop) do |f| %>
+  <%= f.label :name, "店舗名" %>
+  <%= f.text_field :name %>
+  <%= f.label :adress, "住所" %>
+  <%= f.text_field :adress %>
+  <%= f.label :lat, "緯度" %>
+  <%= f.text_field :lat %>
+  <%= f.label :lng, "経度" %>
+  <%= f.text_field :lng %>
+  <%= f.label :phone_number, "電話番号" %>
+  <%= f.text_field :phone_number%>
+  <%= f.label :shop_image, "らーめん画像", class: "label" %>
+  <%= f.attachment_field :shop_image, class: "input" %>
+  <%= f.label :comment, "コメント" %>
+  <%= f.text_area :comment %>
+  <%= f.submit %>
+<% end %>
