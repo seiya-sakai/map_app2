@@ -1,6 +1,6 @@
 <div class="container" >
       <div class="posts-index-image">
-         <%= attachment_image_tag @shop, :shop_image %>
+          <%= attachment_image_tag @shop, :shop_image %>
       </div>
       <div class="card">
         <div class="card-body">
@@ -21,7 +21,7 @@
                   <p>住所</p>
                 </div>
                 <div class='flexitem'>
-                  <p><%=@shop.adress %></p>
+                  <p><%=@shop.address %></p>
                 </div>
             </div>
         </div>
@@ -37,7 +37,21 @@
                 </div>
             </div>
         </div>
-      </div>  
+      </div>
+      <% if @shop.comment %>
+         <div class="card">
+          <div class="card-body">
+              <div class="home-index-item">
+                  <div class='flexitem'>
+                    <p>掲載者の口コミ</p>
+                  </div>
+                  <div class='flexitem'>
+                    <p><%=@shop.comment %></p>
+                  </div>
+              </div>    
+          </div>
+        </div>  
+      <% end %>
 </div>
 <div class="modal_container">
         <!-- Button trigger modal -->

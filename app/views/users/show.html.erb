@@ -41,30 +41,73 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="columns is-multiline">
-      <% @user.posts.each do |post| %>
-        <div class="column is-3">
-          <div class="card mb-5">
-            <div class="card-content">
-              <div class="media">
-                <div class="media-content">
-                  <%=post.title %>
-                  <br>
-                  <%=post.body %>
-                  <% if @user.id == current_user.id %>
-                    <br>
-                    <%= link_to post_path(post), method: :delete, data: {confirm: "削除しますか？"}, class: "panel-block" do %>
-                      この投稿を削除する
-                    <% end %>
-                  <% end %>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">投稿</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">掲載店</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+  　　　<section class="section">
+        <div class="container">
+          <div class="columns is-multiline">
+            <% @user.posts.each do |post| %>
+              <div class="column is-3">
+                <div class="card mb-5">
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <%=post.title %>
+                        <br>
+                        <%=post.body %>
+                        <% if @user.id == current_user.id %>
+                          <br>
+                          <%= link_to post_path(post), method: :delete, data: {confirm: "削除しますか？"}, class: "panel-block" do %>
+                            この投稿を削除する
+                          <% end %>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            <% end %>
           </div>
         </div>
-      <% end %>
-    </div>
+      </section>
   </div>
-</section>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+  　　<section class="section">
+        <div class="container">
+          <div class="columns is-multiline">
+            <% @user.shops.each do |shop| %>
+              <div class="column is-3">
+                <div class="card mb-5">
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-content">
+                        <%= attachment_image_tag shop, :shop_image %>
+                        <br>
+                        <%=shop.name %>
+                        <% if @user.id == current_user.id %>
+                          <br>
+                          <%= link_to shop_path(shop), method: :delete, data: {confirm: "削除しますか？"}, class: "panel-block" do %>
+                            この投稿を削除する
+                          <% end %>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </section>
+  </div>
+</div>
+
+

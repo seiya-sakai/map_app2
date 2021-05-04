@@ -63,3 +63,4 @@ gem "refile-mini_magick"
 gem 'dotenv-rails'
 gem 'meta-tags'
 gem 'rails-i18n'
+gem 'geocoder'

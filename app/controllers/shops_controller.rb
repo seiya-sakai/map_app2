@@ -13,8 +13,13 @@ class ShopsController < ApplicationController
       　redirect_to new_user_session_path, alert: '投稿にはサインインが必要です'
     end      
   end
+  def destroy
+    shop = Shop.find(params[:id])
+    shop.destroy
+    redirect_to root_path
+  end  
   private 
   def shop_params
-    params.require(:shop).permit(:name,:adress,:lat,:lng,:phone_number,:shop_image_id,:comment)
+    params.require(:shop).permit(:name,:address,:latitude,:longitude,:phone_number,:shop_image,:comment)
   end
 end
