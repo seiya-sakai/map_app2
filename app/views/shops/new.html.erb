@@ -1,13 +1,29 @@
-<%= form_for(@shop) do |f| %>
-  <%= f.label :name, "店舗名" %>
-  <%= f.text_field :name %>
-  <%= f.label :住所 %>
-  <%= f.text_area :address, autofocus: true %>
-  <%= f.label :phone_number, "電話番号" %>
-  <%= f.text_field :phone_number %>
-  <%= f.label :shop_image, "らーめん画像" %>
-  <%= f.attachment_field :shop_image %>
-  <%= f.label :comment, "コメント" %>
-  <%= f.text_area :comment %>
-  <%= f.submit %>
-<% end %>
+<div class="card col-sm-6 mx-auto mt-5">
+  <div class="card-body">
+     <h3 class="text-center mt-1 mb-4">新規店舗登録</h3>
+     <%= form_for(@shop) do |f| %>
+      <div class="form-group mt-4" >
+          <%= f.label :name, "店舗名", class: "label mt-3" %>
+          <%= f.text_field :name %>
+      </div>
+      <div class="form-group mt-4 ml-2">
+         <%= f.label :住所 , :class => "form-label mt-3" %>
+         <%= f.text_area :address, autofocus: true %>
+      </div>
+      <div class="form-group mt-4 ml-2">
+           <%= f.label :phone_number, "電話番号" , :class => "form-label mt-3" %>
+           <%= f.text_field :phone_number %>
+      </div>
+      <div class="form-group mt-4 ml-2">
+          <%= f.label :shop_image, "らーめん画像", class: "label mt-3" %>
+          <%= f.attachment_field :shop_image %>
+      </div>
+      <div class="form-group mt-4 ml-2">
+          <%= f.label :comment, "コメント", class: "label mt-3" %>
+          <%= f.text_area :comment %>
+      </div>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>  
+
