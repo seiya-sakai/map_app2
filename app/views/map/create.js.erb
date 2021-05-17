@@ -1,4 +1,3 @@
- $("textarea").val("");
- $("input").val("");
+ $(".form-control").val("");
  $('#exampleModal').modal('hide')
  $('.posts').html("<%= escape_javascript(render partial: 'posts', locals: {posts: @posts}) %>");
