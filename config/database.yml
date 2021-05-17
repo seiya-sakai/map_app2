@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: map_app2_production
-  username: map_app2
-  password: <%= ENV['MAP_APP2_DATABASE_PASSWORD'] %>
+  database: <%= Rails.application.credentials.db[:database] %>
+  username: <%= Rails.application.credentials.db[:username] %>
+  password: <%= Rails.application.credentials.db[:password] %>
+  socket: <%= Rails.application.credentials.db[:socket] %>
